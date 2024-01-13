@@ -39,6 +39,8 @@ scoreboard players set game roundRunning 0
 scoreboard players set time timeTicks 600
 scoreboard players set @a kills 0
 
+kill @e[type=item_display,tag=PowerUp]
+
 effect clear @a slowness
 effect clear @a speed
 effect clear @a blindness

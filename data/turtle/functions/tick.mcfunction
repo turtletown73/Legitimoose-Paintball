@@ -3,6 +3,9 @@ team empty red
 execute as @a if score @s team matches 1 run team join green @s
 execute as @a if score @s team matches 2 run team join red @s
 
+execute as @a[advancements={adventure/root=true}] run advancement revoke @s only minecraft:adventure/root
+execute as @a[advancements={adventure/shoot_arrow=true}] run advancement revoke @s only minecraft:adventure/shoot_arrow
+
 scoreboard players set playerCount teamKills 0
 execute as @a[team=!spectator] run scoreboard players add playerCount teamKills 1
 

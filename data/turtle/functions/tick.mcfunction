@@ -9,6 +9,9 @@ execute as @a[team=!spectator] run scoreboard players add playerCount teamKills 
 scoreboard players set green teamKills 0
 scoreboard players set red teamKills 0
 
+execute as @a if score @s levitationTime matches 1.. run scoreboard players remove @s levitationTime 1
+execute as @a if score @s levitationTime matches ..0 run effect clear @s levitation
+
 scoreboard players operation green teamKills += @a[team=green] kills
 scoreboard players operation red teamKills += @a[team=red] kills
 

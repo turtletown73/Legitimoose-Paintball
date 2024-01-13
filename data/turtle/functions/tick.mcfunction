@@ -118,3 +118,9 @@ execute as @a[team=red] if score @s spawnProtection matches 1.. at @s if entity 
 execute as @a[team=green] if score @s spawnProtection matches 1.. at @s if entity @s[z=92,dz=1] run scoreboard players set @s spawnProtection 0
 
 execute as @a[tag=movee] at @s run ride @s mount @e[tag=movee,type=!player,limit=1,sort=nearest]
+
+execute as @e[type=item_display,tag=PowerUp] at @s run particle dust 0.5 0.5 0.5 2 ~ ~ ~ 0.5 0.5 0.5 1 3 normal @a
+execute as @e[type=item_display,tag=PowerUp] at @s unless score @s powerup matches 1..7 store result score @s powerup run random value 1..7
+
+execute as @a[team=red] at @s if entity @e[type=item_display,tag=PowerUp,distance=..3,sort=nearest,limit=1] run function turtle:get-power-up
+execute as @a[team=green] at @s if entity @e[type=item_display,tag=PowerUp,distance=..3,sort=nearest,limit=1] run function turtle:get-power-up

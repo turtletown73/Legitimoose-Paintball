@@ -38,6 +38,15 @@ scoreboard objectives add hasSwitchedSpectator dummy
 scoreboard objectives add powerup dummy
 scoreboard objectives add levitationTime dummy
 
+kill @e[type=armor_stand,tag=PowerUpSpawn]
+
+summon armor_stand -12.5 70 96.5 {Tags:["PowerUpSpawn"],Invisible:1b,Invulnerable:1b}
+summon armor_stand -24.5 65 97.5 {Tags:["PowerUpSpawn"],Invisible:1b,Invulnerable:1b}
+summon armor_stand 18.5 71 67.5 {Tags:["PowerUpSpawn"],Invisible:1b,Invulnerable:1b}
+summon armor_stand 5.5 72 75.5 {Tags:["PowerUpSpawn"],Invisible:1b,Invulnerable:1b}
+summon armor_stand 3.5 65 65.5 {Tags:["PowerUpSpawn"],Invisible:1b,Invulnerable:1b}
+summon armor_stand -9.5 70 46.5 {Tags:["PowerUpSpawn"],Invisible:1b,Invulnerable:1b}
+
 scoreboard players set twenty placeholders 20
 scoreboard players set big placeholders 100000
 scoreboard players set cool placeholders 8842

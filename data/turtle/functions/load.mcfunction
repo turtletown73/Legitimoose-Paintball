@@ -36,6 +36,10 @@ scoreboard objectives add spectator trigger
 scoreboard objectives add inSpectator dummy
 scoreboard objectives add hasSwitchedSpectator dummy
 scoreboard objectives add powerup dummy
+scoreboard objectives add levitationTime dummy
+
+execute as @a if score @s levitationTime matches 1.. run scoreboard players remove @s levitationTime 1
+execute as @a if score @s levitationTime matches 0 run effect clear @s levitation
 
 scoreboard players set twenty placeholders 20
 scoreboard players set big placeholders 100000

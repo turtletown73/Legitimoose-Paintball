@@ -50,4 +50,8 @@ execute as @a[team=green] at @s if predicate turtle:crouching if score @s poweru
 execute as @a[team=green] at @s if predicate turtle:crouching if score @s powerup matches 7 run execute at @a[team=red,distance=..15] as @e[type=minecart,distance=..2,limit=1,sort=nearest,tag=movee] at @s store result entity @s Motion[2] double 0.015 run scoreboard players get @s gunSecondZ
 execute as @e[type=minecart,tag=movee] if score @s existenceTime matches 10.. run kill @s
 
+execute as @a at @s if predicate turtle:crouching if score @s powerup matches 7 run tag @s add movee
+execute as @a at @s if predicate turtle:crouching if score @s powerup matches 7 run summon minecart ~ ~ ~ {Tags:["movee"],Motion:[0.0d, 1.0d, 0.0d],}
+execute as @e[tag=movee,type=minecart] at @s if score @s existenceTime matches 10.. run kill @s
+execute as @e[tag=movee,type=minecart] at @s if score @s existenceTime matches 10.. run tag @a[sort=nearest,limit=1,tag=movee] remove movee
 execute as @a at @s if predicate turtle:crouching if score @s powerup matches 7 run scoreboard players set @s powerup 0
